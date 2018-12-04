@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OR-Mappings>
+
+    <jdbc>
+        <property>
+            <name>driver_class</name>
+            <value>com.mysql.cj.jdbc.Driver</value>
+        </property>
+        <property>
+            <name>url_path</name>
+            <value>jdbc:mysql://localhost:3306/wenda?useSSL=false&amp;serverTimezone=UTC</value>
+        </property>
+        <property>
+            <name>db_username</name>
+            <value>root</value>
+        </property>
+        <property>
+            <name>db_password</name>
+            <value>123456</value>
+        </property>
+
+    </jdbc>
+
+    <class>
+        <name>com.sss.bean.UserBean</name>
+        <table>user</table>
+        <userId>
+            <name>userId</name>
+        </userId>
+        <property>
+            <name>userName</name>
+            <column>name</column>
+            <type>String</type>
+            <lazy>false</lazy>
+        </property>
+        <property>
+            <name>userPassword</name>
+            <column>password</column>
+            <type>String</type>
+            <lazy>true</lazy>
+        </property>
+    </class>
+
+    <class>
+        <name>com.sss.bean.BookBean</name>
+        <table>book</table>
+        <userId>
+            <name>bookId</name>
+        </userId>
+        <property>
+            <name>bookTitle</name>
+            <column>title</column>
+            <type>String</type>
+            <lazy>false</lazy>
+        </property>
+        <property>
+            <name>bookAuthor</name>
+            <column>author</column>
+            <type>String</type>
+            <lazy>false</lazy>
+        </property>
+        <property>
+            <name>bookPrice</name>
+            <column>price</column>
+            <type>float</type>
+            <lazy>false</lazy>
+        </property>
+    </class>
+
+</OR-Mappings>

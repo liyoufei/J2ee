@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sc-di>
+    <bean id="userDao" class="com.sss.dao.UserDao"></bean>
+    <bean id="userBean" class="com.sss.bean.UserBean">
+        <field name="userDao" bean-ref="userDao"></field>
+    </bean>
+    <bean id="loginAction" class="com.sss.action.LoginAction">
+        <field name="userBean" bean-ref="userBean"></field>
+    </bean>
+</sc-di>

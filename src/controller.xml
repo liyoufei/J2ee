@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sc-configuration>
+
+    <interceptor name="log" class="com.sss.interceptor.LogInterceptor" preDo="preAction" afterDo="afterAction">
+
+    </interceptor>
+    <controller>
+        <action name="login" class="com.sss.action.LoginAction" method="handleLogin">
+
+            <interceptor-ref name="log"></interceptor-ref>
+
+            <result name="success" type="forward" value="pages/success_view.xml"></result>
+            <result name="failure" type="redirect" value="pages/failure.jsp"></result>
+        </action>
+
+        <action name="submit" class="com.sss.action.LoginAction" method="submit">
+
+            <interceptor-ref name="log"></interceptor-ref>
+
+            <result name="failure" type="redirect" value="pages/failure.jsp"></result>
+            <result name="welcome" type="forward" value="pages/welcome.jsp"></result>
+        </action>
+        <action name="register" class="com.sss.action.RegisterAction" method="handleRegister">
+            <result name="success" type="forward" value="pages/welcome.jsp"></result>
+        </action>
+
+    </controller>
+
+</sc-configuration>
